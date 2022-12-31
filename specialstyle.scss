@@ -1,0 +1,59 @@
+@use "colorScheme.scss";
+html {
+   margin: 0 auto;
+   padding: 0;
+}
+body {
+   padding: 0;
+   margin: 0 auto;
+}
+@mixin headerFooter($colory: white, $fontSize: 50px) {
+   font-size: $fontSize;
+   background-color: $colory;
+   height: 100px;
+   font-weight: 700;
+}
+@mixin errSuc($colory: white) {
+   background-color: $colory;
+   font-size: 28px;
+}
+.header {
+   @include headerFooter($colory: colorScheme.$basicLightOne, $fontSize: 40px);
+   padding-top: 60px;
+   text-align: center;
+}
+.form {
+   margin: 40px;
+   direction: ltr;
+   label {
+      font-size: 25px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      margin: 5px;
+   }
+   input {
+      background-color: colorScheme.$basicLightFour;
+      font-size: large;
+      margin: 5px;
+   }
+   .submit {
+      background-color: colorScheme.$basicLightThree;
+   }
+}
+.errorA {
+   display: flex;
+}
+.sucsessA {
+   display: flex;
+}
+.footer {
+   @include headerFooter($colory: colorScheme.$basicLightFour, $fontSize: 40px);
+   justify-content: center;
+   padding-top: 60px;
+   text-align: center;
+}
+.sucsess {
+   @include errSuc($colory: colorScheme.$sucsessColorOne);
+}
+.error {
+   @include errSuc($colory: colorScheme.$errorColorOne);
+}
